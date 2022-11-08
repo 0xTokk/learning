@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const TEST_ACCOUNT = new web3.PublicKey('B1aLAAe4vW8nSQCetXnYqJfRxzTjnbooczwkUJAr7yMS');
+const RECIPIENT_ACCOUNT = new web3.PublicKey('GUnSkcwkJT6Wo1S1po3g3gC7ZRxftvvAPex78BJLJXap');
 
 async function initializeKeypair(
     connection: web3.Connection
@@ -90,7 +90,7 @@ async function main() {
 
     console.log("Public key:", payer.publicKey.toBase58());
 
-    await transferSol(payer, 0.1, TEST_ACCOUNT, connection);
+    await transferSol(payer, 1, RECIPIENT_ACCOUNT, connection);
 }
 
 main()
